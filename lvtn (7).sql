@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 28, 2022 lúc 03:41 AM
+-- Thời gian đã tạo: Th10 28, 2022 lúc 09:25 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 7.4.29
 
@@ -66,7 +66,6 @@ CREATE TABLE `chat_lieu` (
 
 INSERT INTO `chat_lieu` (`ms_cl`, `ten_cl`, `ten_en_cl`, `created_at`, `updated_at`) VALUES
 (1, 'Da cao cấp', 'Premium leather', '2022-09-12 04:07:15', '2022-09-12 04:07:15'),
-(2, 'Da tổng hợp', 'Synthetic Leather', '2022-09-12 04:09:19', '2022-09-12 04:16:59'),
 (3, 'Vải dệt', 'Textiles', '2022-09-13 20:06:48', '2022-09-13 20:06:48'),
 (4, 'Da / Vải', 'Leather / Fabric', '2022-09-13 21:07:18', '2022-09-13 21:07:18'),
 (5, 'Vải & Cao Su', 'Fabric & Rubber', '2022-09-13 21:25:07', '2022-09-13 21:25:07'),
@@ -360,12 +359,12 @@ CREATE TABLE `chi_tiet_san_pham` (
 --
 
 INSERT INTO `chi_tiet_san_pham` (`ms_ctsp`, `soluong`, `ms_kc`, `ms_sp`, `created_at`, `updated_at`, `so_luong_da_ban`, `ms_mau`) VALUES
-(95, 959, 1, 20, '2022-11-19 10:06:45', '2022-11-19 10:54:19', 41, 1),
+(95, 960, 1, 20, '2022-11-19 10:06:45', '2022-11-19 10:54:19', 41, 1),
 (96, 959, 2, 20, '2022-11-19 10:06:49', '2022-11-19 10:54:19', 41, 1),
 (97, 959, 3, 20, '2022-11-19 10:06:53', '2022-11-19 10:54:19', 41, 1),
 (98, 959, 4, 20, '2022-11-19 10:06:58', '2022-11-19 10:54:19', 41, 1),
 (99, 959, 5, 20, '2022-11-19 10:07:02', '2022-11-19 10:54:19', 41, 1),
-(100, 955, 1, 20, '2022-11-19 10:07:07', '2022-11-20 11:47:10', 45, 3),
+(100, 965, 1, 20, '2022-11-19 10:07:07', '2022-11-20 11:47:10', 45, 3),
 (101, 957, 2, 20, '2022-11-19 10:07:11', '2022-11-19 10:54:19', 43, 3),
 (102, 933, 3, 20, '2022-11-19 10:07:15', '2022-11-20 11:47:10', 67, 3),
 (103, 957, 4, 20, '2022-11-19 10:07:19', '2022-11-19 10:54:19', 43, 3),
@@ -478,6 +477,13 @@ CREATE TABLE `comments` (
   `comment_reply` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `comments`
+--
+
+INSERT INTO `comments` (`comment_id`, `comment_name`, `comment_value`, `comment_ms_sp`, `created_at`, `updated_at`, `comment_tatus`, `comment_reply`) VALUES
+(20, 'Bùi Công Minh', 'Sản phẩm đẹp', 20, '2022-11-28 07:34:44', '2022-11-28 07:35:07', 1, 'cảm ơn bạn đã đánh  giá bình luận sản phẩm');
+
 -- --------------------------------------------------------
 
 --
@@ -500,7 +506,7 @@ CREATE TABLE `comment_oder` (
 --
 
 INSERT INTO `comment_oder` (`comment_oder_id`, `comment_oder_name`, `comment_oder_value`, `comment_oder_reply`, `comment_oder_ms_dh`, `created_at`, `updated_at`, `comment_oder_tatus`) VALUES
-(18, 'Bùi Công Minh', 'sản phẩm đẹp', 'cảm ơn bạn', 105, '2022-11-22 08:09:06', '2022-11-22 08:14:58', 1),
+(18, 'Bùi Công Minh', 'sản phẩm đẹp', 'Cảm ơn bạn!!!', 105, '2022-11-22 08:09:06', '2022-11-28 07:32:48', 1),
 (19, 'Bùi Công Minh', 'Giao hàng nhanh chóng', 'Cảm ơn bạn!', 106, '2022-11-22 08:15:31', '2022-11-22 08:17:18', 1);
 
 -- --------------------------------------------------------
@@ -1069,7 +1075,9 @@ INSERT INTO `nhap_hang` (`ms_nh`, `sl_nh`, `gia_nh`, `tt_nh`, `ms_ncc`, `ms_kc`,
 (247, 1000, 1100000, 2, 1, 2, 4, 6, '2022-11-19 10:48:29', '2022-11-19 10:48:42', 3),
 (248, 1000, 1100000, 2, 1, 3, 4, 6, '2022-11-19 10:48:29', '2022-11-19 10:48:47', 3),
 (249, 1000, 1100000, 2, 1, 4, 4, 6, '2022-11-19 10:48:29', '2022-11-19 10:48:52', 3),
-(250, 1000, 1100000, 2, 1, 5, 4, 6, '2022-11-19 10:48:29', '2022-11-19 10:48:57', 3);
+(250, 1000, 1100000, 2, 1, 5, 4, 6, '2022-11-19 10:48:29', '2022-11-19 10:48:57', 3),
+(252, 1, 2000000, 2, 1, 1, 20, 6, '2022-11-28 07:07:30', '2022-11-28 07:08:56', 1),
+(253, 10, 2000000, 2, 1, 1, 20, 6, '2022-11-28 07:10:20', '2022-11-28 07:10:34', 3);
 
 -- --------------------------------------------------------
 
@@ -1127,79 +1135,79 @@ CREATE TABLE `permissions` (
 
 INSERT INTO `permissions` (`id`, `name`, `display_name`, `parent_id`, `key_code`, `created_at`, `updated_at`) VALUES
 (1, 'NhaCungCap', 'NhaCungCap', 0, NULL, '2022-08-14 17:37:48', '2022-08-14 17:37:48'),
-(2, 'list', 'list', 1, 'NhaCungCap_list', '2022-08-14 17:37:48', '2022-08-14 17:37:48'),
-(3, 'add', 'add', 1, 'NhaCungCap_add', '2022-08-14 17:37:48', '2022-08-14 17:37:48'),
-(4, 'edit', 'edit', 1, 'NhaCungCap_edit', '2022-08-14 17:37:48', '2022-08-14 17:37:48'),
-(5, 'delete', 'delete', 1, 'NhaCungCap_delete', '2022-08-14 17:37:48', '2022-08-14 17:37:48'),
+(2, 'list', 'Xem danh sách \n', 1, 'NhaCungCap_list', '2022-08-14 17:37:48', '2022-08-14 17:37:48'),
+(3, 'add', 'Thêm', 1, 'NhaCungCap_add', '2022-08-14 17:37:48', '2022-08-14 17:37:48'),
+(4, 'edit', 'Sửa', 1, 'NhaCungCap_edit', '2022-08-14 17:37:48', '2022-08-14 17:37:48'),
+(5, 'delete', 'Xoá', 1, 'NhaCungCap_delete', '2022-08-14 17:37:48', '2022-08-14 17:37:48'),
 (6, 'XuatXu', 'XuatXu', 0, NULL, '2022-08-14 17:38:24', '2022-08-14 17:38:24'),
-(7, 'list', 'list', 6, 'XuatXu_list', '2022-08-14 17:38:24', '2022-08-14 17:38:24'),
-(8, 'add', 'add', 6, 'XuatXu_add', '2022-08-14 17:38:24', '2022-08-14 17:38:24'),
-(9, 'edit', 'edit', 6, 'XuatXu_edit', '2022-08-14 17:38:24', '2022-08-14 17:38:24'),
-(10, 'delete', 'delete', 6, 'XuatXu_delete', '2022-08-14 17:38:24', '2022-08-14 17:38:24'),
+(7, 'list', 'Xem danh sách\n', 6, 'XuatXu_list', '2022-08-14 17:38:24', '2022-08-14 17:38:24'),
+(8, 'add', 'Thêm', 6, 'XuatXu_add', '2022-08-14 17:38:24', '2022-08-14 17:38:24'),
+(9, 'edit', 'Sửa', 6, 'XuatXu_edit', '2022-08-14 17:38:24', '2022-08-14 17:38:24'),
+(10, 'delete', 'Xoá', 6, 'XuatXu_delete', '2022-08-14 17:38:24', '2022-08-14 17:38:24'),
 (11, 'GioiTinh', 'GioiTinh', 0, NULL, '2022-08-14 17:38:38', '2022-08-14 17:38:38'),
-(12, 'list', 'list', 11, 'GioiTinh_list', '2022-08-14 17:38:38', '2022-08-14 17:38:38'),
-(13, 'add', 'add', 11, 'GioiTinh_add', '2022-08-14 17:38:38', '2022-08-14 17:38:38'),
-(14, 'edit', 'edit', 11, 'GioiTinh_edit', '2022-08-14 17:38:38', '2022-08-14 17:38:38'),
-(15, 'delete', 'delete', 11, 'GioiTinh_delete', '2022-08-14 17:38:38', '2022-08-14 17:38:38'),
+(12, 'list', 'Xem danh sách', 11, 'GioiTinh_list', '2022-08-14 17:38:38', '2022-08-14 17:38:38'),
+(13, 'add', 'Thêm', 11, 'GioiTinh_add', '2022-08-14 17:38:38', '2022-08-14 17:38:38'),
+(14, 'edit', 'Sửa', 11, 'GioiTinh_edit', '2022-08-14 17:38:38', '2022-08-14 17:38:38'),
+(15, 'delete', 'Xoá', 11, 'GioiTinh_delete', '2022-08-14 17:38:38', '2022-08-14 17:38:38'),
 (16, 'KichCo', 'KichCo', 0, NULL, '2022-08-14 17:38:50', '2022-08-14 17:38:50'),
-(17, 'list', 'list', 16, 'KichCo_list', '2022-08-14 17:38:51', '2022-08-14 17:38:51'),
-(18, 'add', 'add', 16, 'KichCo_add', '2022-08-14 17:38:51', '2022-08-14 17:38:51'),
-(19, 'edit', 'edit', 16, 'KichCo_edit', '2022-08-14 17:38:51', '2022-08-14 17:38:51'),
-(20, 'delete', 'delete', 16, 'KichCo_delete', '2022-08-14 17:38:51', '2022-08-14 17:38:51'),
+(17, 'list', 'Xem danh sách ', 16, 'KichCo_list', '2022-08-14 17:38:51', '2022-08-14 17:38:51'),
+(18, 'add', 'Thêm', 16, 'KichCo_add', '2022-08-14 17:38:51', '2022-08-14 17:38:51'),
+(19, 'edit', 'Sửa', 16, 'KichCo_edit', '2022-08-14 17:38:51', '2022-08-14 17:38:51'),
+(20, 'delete', 'Xoá', 16, 'KichCo_delete', '2022-08-14 17:38:51', '2022-08-14 17:38:51'),
 (21, 'KieuDang', 'KieuDang', 0, NULL, '2022-08-14 17:39:05', '2022-08-14 17:39:05'),
-(22, 'list', 'list', 21, 'KieuDang_list', '2022-08-14 17:39:05', '2022-08-14 17:39:05'),
-(23, 'add', 'add', 21, 'KieuDang_add', '2022-08-14 17:39:05', '2022-08-14 17:39:05'),
-(24, 'edit', 'edit', 21, 'KieuDang_edit', '2022-08-14 17:39:05', '2022-08-14 17:39:05'),
-(25, 'delete', 'delete', 21, 'KieuDang_delete', '2022-08-14 17:39:05', '2022-08-14 17:39:05'),
+(22, 'list', 'Xem danh sách ', 21, 'KieuDang_list', '2022-08-14 17:39:05', '2022-08-14 17:39:05'),
+(23, 'add', 'Thêm', 21, 'KieuDang_add', '2022-08-14 17:39:05', '2022-08-14 17:39:05'),
+(24, 'edit', 'Sửa', 21, 'KieuDang_edit', '2022-08-14 17:39:05', '2022-08-14 17:39:05'),
+(25, 'delete', 'Xoá', 21, 'KieuDang_delete', '2022-08-14 17:39:05', '2022-08-14 17:39:05'),
 (26, 'ChatLieu', 'ChatLieu', 0, NULL, '2022-08-14 17:39:19', '2022-08-14 17:39:19'),
-(27, 'list', 'list', 26, 'ChatLieu_list', '2022-08-14 17:39:19', '2022-08-14 17:39:19'),
-(28, 'add', 'add', 26, 'ChatLieu_add', '2022-08-14 17:39:19', '2022-08-14 17:39:19'),
-(29, 'edit', 'edit', 26, 'ChatLieu_edit', '2022-08-14 17:39:19', '2022-08-14 17:39:19'),
-(30, 'delete', 'delete', 26, 'ChatLieu_delete', '2022-08-14 17:39:19', '2022-08-14 17:39:19'),
+(27, 'list', 'Xem danh sách ', 26, 'ChatLieu_list', '2022-08-14 17:39:19', '2022-08-14 17:39:19'),
+(28, 'add', 'Thêm', 26, 'ChatLieu_add', '2022-08-14 17:39:19', '2022-08-14 17:39:19'),
+(29, 'edit', 'Sửa', 26, 'ChatLieu_edit', '2022-08-14 17:39:19', '2022-08-14 17:39:19'),
+(30, 'delete', 'Xoá', 26, 'ChatLieu_delete', '2022-08-14 17:39:19', '2022-08-14 17:39:19'),
 (31, 'ThuongHieu', 'ThuongHieu', 0, NULL, '2022-08-14 17:39:35', '2022-08-14 17:39:35'),
-(32, 'list', 'list', 31, 'ThuongHieu_list', '2022-08-14 17:39:35', '2022-08-14 17:39:35'),
-(33, 'add', 'add', 31, 'ThuongHieu_add', '2022-08-14 17:39:35', '2022-08-14 17:39:35'),
-(34, 'edit', 'edit', 31, 'ThuongHieu_edit', '2022-08-14 17:39:35', '2022-08-14 17:39:35'),
-(35, 'delete', 'delete', 31, 'ThuongHieu_delete', '2022-08-14 17:39:35', '2022-08-14 17:39:35'),
+(32, 'list', 'Xem danh sách ', 31, 'ThuongHieu_list', '2022-08-14 17:39:35', '2022-08-14 17:39:35'),
+(33, 'add', 'Thêm', 31, 'ThuongHieu_add', '2022-08-14 17:39:35', '2022-08-14 17:39:35'),
+(34, 'edit', 'Sửa', 31, 'ThuongHieu_edit', '2022-08-14 17:39:35', '2022-08-14 17:39:35'),
+(35, 'delete', 'Xoá', 31, 'ThuongHieu_delete', '2022-08-14 17:39:35', '2022-08-14 17:39:35'),
 (36, 'MauSac', 'MauSac', 0, NULL, '2022-08-14 17:39:51', '2022-08-14 17:39:51'),
-(37, 'list', 'list', 36, 'MauSac_list', '2022-08-14 17:39:51', '2022-08-14 17:39:51'),
-(38, 'add', 'add', 36, 'MauSac_add', '2022-08-14 17:39:51', '2022-08-14 17:39:51'),
-(39, 'edit', 'edit', 36, 'MauSac_edit', '2022-08-14 17:39:51', '2022-08-14 17:39:51'),
-(40, 'delete', 'delete', 36, 'MauSac_delete', '2022-08-14 17:39:51', '2022-08-14 17:39:51'),
+(37, 'list', 'Xem danh sách ', 36, 'MauSac_list', '2022-08-14 17:39:51', '2022-08-14 17:39:51'),
+(38, 'add', 'Thêm', 36, 'MauSac_add', '2022-08-14 17:39:51', '2022-08-14 17:39:51'),
+(39, 'edit', 'Sửa', 36, 'MauSac_edit', '2022-08-14 17:39:51', '2022-08-14 17:39:51'),
+(40, 'delete', 'Xoá', 36, 'MauSac_delete', '2022-08-14 17:39:51', '2022-08-14 17:39:51'),
 (41, 'SanPham', 'SanPham', 0, NULL, '2022-08-14 17:40:21', '2022-08-14 17:40:21'),
-(42, 'list', 'list', 41, 'SanPham_list', '2022-08-14 17:40:21', '2022-08-14 17:40:21'),
-(43, 'add', 'add', 41, 'SanPham_add', '2022-08-14 17:40:21', '2022-08-14 17:40:21'),
-(44, 'edit', 'edit', 41, 'SanPham_edit', '2022-08-14 17:40:21', '2022-08-14 17:40:21'),
-(45, 'delete', 'delete', 41, 'SanPham_delete', '2022-08-14 17:40:21', '2022-08-14 17:40:21'),
+(42, 'list', 'Xem danh sách ', 41, 'SanPham_list', '2022-08-14 17:40:21', '2022-08-14 17:40:21'),
+(43, 'add', 'Thêm', 41, 'SanPham_add', '2022-08-14 17:40:21', '2022-08-14 17:40:21'),
+(44, 'edit', 'Sửa', 41, 'SanPham_edit', '2022-08-14 17:40:21', '2022-08-14 17:40:21'),
+(45, 'delete', 'Xoá', 41, 'SanPham_delete', '2022-08-14 17:40:21', '2022-08-14 17:40:21'),
 (46, 'NhapHang', 'NhapHang', 0, NULL, '2022-08-14 17:40:36', '2022-08-14 17:40:36'),
-(47, 'list', 'list', 46, 'NhapHang_list', '2022-08-14 17:40:36', '2022-08-14 17:40:36'),
-(48, 'add', 'add', 46, 'NhapHang_add', '2022-08-14 17:40:36', '2022-08-14 17:40:36'),
-(49, 'edit', 'edit', 46, 'NhapHang_edit', '2022-08-14 17:40:36', '2022-08-14 17:40:36'),
-(50, 'delete', 'delete', 46, 'NhapHang_delete', '2022-08-14 17:40:36', '2022-08-14 17:40:36'),
+(47, 'list', 'Xem danh sách ', 46, 'NhapHang_list', '2022-08-14 17:40:36', '2022-08-14 17:40:36'),
+(48, 'add', 'Nhập hàng', 46, 'NhapHang_add', '2022-08-14 17:40:36', '2022-08-14 17:40:36'),
+(49, 'edit', 'Duyệt đơn nhập hàng', 46, 'NhapHang_edit', '2022-08-14 17:40:36', '2022-08-14 17:40:36'),
+(50, 'delete', 'Xoá', 46, 'NhapHang_delete', '2022-08-14 17:40:36', '2022-08-14 17:40:36'),
 (51, 'User', 'User', 0, NULL, '2022-08-14 17:40:48', '2022-08-14 17:40:48'),
-(52, 'list', 'list', 51, 'User_list', '2022-08-14 17:40:48', '2022-08-14 17:40:48'),
-(53, 'add', 'add', 51, 'User_add', '2022-08-14 17:40:48', '2022-08-14 17:40:48'),
-(54, 'edit', 'edit', 51, 'User_edit', '2022-08-14 17:40:48', '2022-08-14 17:40:48'),
-(55, 'delete', 'delete', 51, 'User_delete', '2022-08-14 17:40:48', '2022-08-14 17:40:48'),
+(52, 'list', 'Xem danh sách \n', 51, 'User_list', '2022-08-14 17:40:48', '2022-08-14 17:40:48'),
+(53, 'add', 'Thêm', 51, 'User_add', '2022-08-14 17:40:48', '2022-08-14 17:40:48'),
+(54, 'edit', 'Sửa', 51, 'User_edit', '2022-08-14 17:40:48', '2022-08-14 17:40:48'),
+(55, 'delete', 'Xoá', 51, 'User_delete', '2022-08-14 17:40:48', '2022-08-14 17:40:48'),
 (56, 'role', 'role', 0, NULL, '2022-08-14 17:41:00', '2022-08-14 17:41:00'),
-(57, 'list', 'list', 56, 'role_list', '2022-08-14 17:41:00', '2022-08-14 17:41:00'),
-(58, 'add', 'add', 56, 'role_add', '2022-08-14 17:41:00', '2022-08-14 17:41:00'),
-(59, 'edit', 'edit', 56, 'role_edit', '2022-08-14 17:41:00', '2022-08-14 17:41:00'),
-(60, 'delete', 'delete', 56, 'role_delete', '2022-08-14 17:41:00', '2022-08-14 17:41:00'),
+(57, 'list', 'Xem danh sách \n', 56, 'role_list', '2022-08-14 17:41:00', '2022-08-14 17:41:00'),
+(58, 'add', 'Thêm', 56, 'role_add', '2022-08-14 17:41:00', '2022-08-14 17:41:00'),
+(59, 'edit', 'Sửa', 56, 'role_edit', '2022-08-14 17:41:00', '2022-08-14 17:41:00'),
+(60, 'delete', 'Xoá', 56, 'role_delete', '2022-08-14 17:41:00', '2022-08-14 17:41:00'),
 (61, 'permission', 'permission', 0, NULL, '2022-08-14 17:41:09', '2022-08-14 17:41:09'),
-(62, 'list', 'list', 61, 'permission_list', '2022-08-14 17:41:09', '2022-08-14 17:41:09'),
-(63, 'add', 'add', 61, 'permission_add', '2022-08-14 17:41:09', '2022-08-14 17:41:09'),
+(62, 'list', 'Xem danh sách \n', 61, 'permission_list', '2022-08-14 17:41:09', '2022-08-14 17:41:09'),
+(63, 'add', 'Thêm', 61, 'permission_add', '2022-08-14 17:41:09', '2022-08-14 17:41:09'),
 (64, 'comment', 'comment', 0, NULL, '2022-10-29 06:51:52', '2022-10-29 06:51:52'),
-(65, 'list', 'list', 64, 'comment_list', '2022-10-29 06:51:52', '2022-10-29 06:51:52'),
+(65, 'list', 'Quản lý bình luận', 64, 'comment_list', '2022-10-29 06:51:52', '2022-10-29 06:51:52'),
 (66, 'phivanchuyen', 'phivanchuyen', 0, NULL, '2022-10-29 06:52:34', '2022-10-29 06:52:34'),
-(67, 'list', 'list', 66, 'phivanchuyen_list', '2022-10-29 06:52:34', '2022-10-29 06:52:34'),
+(67, 'list', 'Quản lý phí vận chuyển', 66, 'phivanchuyen_list', '2022-10-29 06:52:34', '2022-10-29 06:52:34'),
 (68, 'nguoivanchuyen', 'nguoivanchuyen', 0, NULL, '2022-10-29 07:16:38', '2022-10-29 07:16:38'),
-(69, 'list', 'list', 68, 'nguoivanchuyen_list', '2022-10-29 07:16:38', '2022-10-29 07:16:38'),
-(70, 'add', 'add', 68, 'nguoivanchuyen_add', '2022-10-29 07:16:38', '2022-10-29 07:16:38'),
-(71, 'delete', 'delete', 68, 'nguoivanchuyen_delete', '2022-10-29 07:16:38', '2022-10-29 07:16:38'),
+(69, 'list', 'Xem danh sách \n', 68, 'nguoivanchuyen_list', '2022-10-29 07:16:38', '2022-10-29 07:16:38'),
+(70, 'add', 'Thêm', 68, 'nguoivanchuyen_add', '2022-10-29 07:16:38', '2022-10-29 07:16:38'),
+(71, 'delete', 'Xoá', 68, 'nguoivanchuyen_delete', '2022-10-29 07:16:38', '2022-10-29 07:16:38'),
 (72, 'donhang', 'donhang', 0, NULL, '2022-10-29 07:24:08', '2022-10-29 07:24:08'),
-(73, 'list', 'list', 72, 'donhang_list', '2022-10-29 07:24:08', '2022-10-29 07:24:08'),
-(74, 'edit', 'edit', 72, 'donhang_edit', '2022-10-29 07:24:08', '2022-10-29 07:24:08');
+(73, 'list', 'Xem danh sách \n', 72, 'donhang_list', '2022-10-29 07:24:08', '2022-10-29 07:24:08'),
+(74, 'edit', 'Cập nhật đơn hàng', 72, 'donhang_edit', '2022-10-29 07:24:08', '2022-10-29 07:24:08');
 
 -- --------------------------------------------------------
 
@@ -1246,50 +1254,6 @@ INSERT INTO `permission_role` (`id`, `permission_id`, `role_id`, `created_at`, `
 (30, 32, 2, NULL, NULL),
 (31, 33, 2, NULL, NULL),
 (33, 35, 2, NULL, NULL),
-(34, 2, 1, NULL, NULL),
-(35, 3, 1, NULL, NULL),
-(36, 4, 1, NULL, NULL),
-(37, 5, 1, NULL, NULL),
-(38, 7, 1, NULL, NULL),
-(39, 8, 1, NULL, NULL),
-(40, 9, 1, NULL, NULL),
-(41, 10, 1, NULL, NULL),
-(42, 12, 1, NULL, NULL),
-(43, 13, 1, NULL, NULL),
-(44, 14, 1, NULL, NULL),
-(45, 15, 1, NULL, NULL),
-(46, 17, 1, NULL, NULL),
-(47, 18, 1, NULL, NULL),
-(48, 19, 1, NULL, NULL),
-(49, 20, 1, NULL, NULL),
-(50, 22, 1, NULL, NULL),
-(51, 23, 1, NULL, NULL),
-(52, 24, 1, NULL, NULL),
-(53, 25, 1, NULL, NULL),
-(54, 27, 1, NULL, NULL),
-(55, 28, 1, NULL, NULL),
-(56, 29, 1, NULL, NULL),
-(57, 30, 1, NULL, NULL),
-(58, 32, 1, NULL, NULL),
-(59, 33, 1, NULL, NULL),
-(60, 34, 1, NULL, NULL),
-(61, 35, 1, NULL, NULL),
-(62, 37, 1, NULL, NULL),
-(63, 38, 1, NULL, NULL),
-(64, 39, 1, NULL, NULL),
-(65, 40, 1, NULL, NULL),
-(66, 42, 1, NULL, NULL),
-(67, 43, 1, NULL, NULL),
-(68, 44, 1, NULL, NULL),
-(69, 45, 1, NULL, NULL),
-(70, 47, 1, NULL, NULL),
-(71, 48, 1, NULL, NULL),
-(72, 49, 1, NULL, NULL),
-(73, 50, 1, NULL, NULL),
-(74, 52, 1, NULL, NULL),
-(75, 53, 1, NULL, NULL),
-(76, 54, 1, NULL, NULL),
-(77, 55, 1, NULL, NULL),
 (78, 57, 1, NULL, NULL),
 (79, 58, 1, NULL, NULL),
 (80, 59, 1, NULL, NULL),
@@ -1306,79 +1270,76 @@ INSERT INTO `permission_role` (`id`, `permission_id`, `role_id`, `created_at`, `
 (92, 47, 2, NULL, NULL),
 (94, 49, 2, NULL, NULL),
 (95, 50, 2, NULL, NULL),
-(96, 52, 2, NULL, NULL),
-(97, 53, 2, NULL, NULL),
-(98, 54, 2, NULL, NULL),
-(99, 55, 2, NULL, NULL),
-(100, 62, 2, NULL, NULL),
-(101, 63, 2, NULL, NULL),
-(102, 57, 2, NULL, NULL),
-(103, 58, 2, NULL, NULL),
-(104, 59, 2, NULL, NULL),
-(105, 60, 2, NULL, NULL),
 (106, 34, 2, NULL, NULL),
 (107, 2, 2, NULL, NULL),
 (108, 44, 2, NULL, NULL),
 (109, 48, 2, NULL, NULL),
-(110, 2, 5, NULL, NULL),
-(111, 3, 5, NULL, NULL),
-(112, 4, 5, NULL, NULL),
-(113, 5, 5, NULL, NULL),
-(114, 7, 5, NULL, NULL),
-(115, 8, 5, NULL, NULL),
-(116, 9, 5, NULL, NULL),
-(117, 10, 5, NULL, NULL),
-(118, 12, 5, NULL, NULL),
-(119, 13, 5, NULL, NULL),
-(120, 14, 5, NULL, NULL),
-(121, 15, 5, NULL, NULL),
-(122, 17, 5, NULL, NULL),
-(123, 18, 5, NULL, NULL),
-(124, 19, 5, NULL, NULL),
-(125, 20, 5, NULL, NULL),
-(126, 22, 5, NULL, NULL),
-(127, 23, 5, NULL, NULL),
-(128, 24, 5, NULL, NULL),
-(129, 25, 5, NULL, NULL),
-(130, 27, 5, NULL, NULL),
-(131, 28, 5, NULL, NULL),
-(132, 29, 5, NULL, NULL),
-(133, 30, 5, NULL, NULL),
-(134, 32, 5, NULL, NULL),
-(135, 33, 5, NULL, NULL),
-(136, 34, 5, NULL, NULL),
-(137, 35, 5, NULL, NULL),
-(138, 37, 5, NULL, NULL),
-(139, 38, 5, NULL, NULL),
-(140, 39, 5, NULL, NULL),
-(141, 40, 5, NULL, NULL),
-(142, 42, 5, NULL, NULL),
-(143, 43, 5, NULL, NULL),
-(144, 44, 5, NULL, NULL),
-(145, 45, 5, NULL, NULL),
-(146, 47, 5, NULL, NULL),
-(147, 48, 5, NULL, NULL),
-(148, 49, 5, NULL, NULL),
-(149, 50, 5, NULL, NULL),
 (150, 52, 5, NULL, NULL),
 (151, 53, 5, NULL, NULL),
 (152, 54, 5, NULL, NULL),
 (153, 55, 5, NULL, NULL),
-(154, 57, 5, NULL, NULL),
-(155, 58, 5, NULL, NULL),
-(156, 59, 5, NULL, NULL),
-(157, 60, 5, NULL, NULL),
-(158, 62, 5, NULL, NULL),
-(159, 63, 5, NULL, NULL),
-(160, 65, 5, NULL, NULL),
-(161, 67, 5, NULL, NULL),
-(163, 65, 1, NULL, NULL),
-(164, 67, 1, NULL, NULL),
-(165, 69, 1, NULL, NULL),
-(166, 70, 1, NULL, NULL),
-(167, 71, 1, NULL, NULL),
-(168, 73, 1, NULL, NULL),
-(170, 74, 1, NULL, NULL);
+(171, 2, 1, NULL, NULL),
+(172, 7, 1, NULL, NULL),
+(173, 12, 1, NULL, NULL),
+(174, 17, 1, NULL, NULL),
+(175, 3, 1, NULL, NULL),
+(176, 8, 1, NULL, NULL),
+(177, 13, 1, NULL, NULL),
+(178, 18, 1, NULL, NULL),
+(179, 4, 1, NULL, NULL),
+(180, 9, 1, NULL, NULL),
+(181, 14, 1, NULL, NULL),
+(182, 19, 1, NULL, NULL),
+(183, 5, 1, NULL, NULL),
+(184, 10, 1, NULL, NULL),
+(185, 15, 1, NULL, NULL),
+(186, 20, 1, NULL, NULL),
+(187, 22, 1, NULL, NULL),
+(188, 27, 1, NULL, NULL),
+(189, 32, 1, NULL, NULL),
+(190, 37, 1, NULL, NULL),
+(191, 23, 1, NULL, NULL),
+(192, 28, 1, NULL, NULL),
+(193, 33, 1, NULL, NULL),
+(194, 38, 1, NULL, NULL),
+(195, 24, 1, NULL, NULL),
+(196, 29, 1, NULL, NULL),
+(197, 34, 1, NULL, NULL),
+(198, 39, 1, NULL, NULL),
+(199, 25, 1, NULL, NULL),
+(200, 30, 1, NULL, NULL),
+(201, 35, 1, NULL, NULL),
+(202, 40, 1, NULL, NULL),
+(203, 42, 1, NULL, NULL),
+(204, 43, 1, NULL, NULL),
+(206, 45, 1, NULL, NULL),
+(207, 47, 1, NULL, NULL),
+(208, 44, 1, NULL, NULL),
+(209, 48, 1, NULL, NULL),
+(210, 49, 1, NULL, NULL),
+(211, 50, 1, NULL, NULL),
+(212, 73, 1, NULL, NULL),
+(213, 74, 1, NULL, NULL),
+(214, 69, 1, NULL, NULL),
+(215, 70, 1, NULL, NULL),
+(216, 71, 1, NULL, NULL),
+(217, 67, 1, NULL, NULL),
+(218, 65, 1, NULL, NULL),
+(219, 52, 1, NULL, NULL),
+(220, 65, 6, NULL, NULL),
+(221, 67, 4, NULL, NULL),
+(222, 69, 4, NULL, NULL),
+(223, 70, 4, NULL, NULL),
+(224, 71, 4, NULL, NULL),
+(225, 73, 3, NULL, NULL),
+(226, 74, 3, NULL, NULL),
+(227, 57, 5, NULL, NULL),
+(228, 58, 5, NULL, NULL),
+(229, 59, 5, NULL, NULL),
+(230, 60, 5, NULL, NULL),
+(231, 62, 5, NULL, NULL),
+(232, 63, 5, NULL, NULL),
+(233, 53, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1404,7 +1365,8 @@ INSERT INTO `phi_ships` (`phi_ship_id`, `phi_ship_matp`, `phi_ship_maqh`, `phi_s
 (1, 92, 916, 31117, '60000', '2022-10-26 06:16:29', '2022-10-26 06:17:50'),
 (2, 92, 916, 31120, '50000', '2022-10-26 06:21:06', '2022-10-26 06:21:06'),
 (3, 92, 923, 31219, '70000', '2022-10-26 06:22:11', '2022-10-26 06:22:11'),
-(4, 93, 930, 31318, '55000', '2022-10-26 06:23:58', '2022-10-26 06:23:58');
+(4, 93, 930, 31318, '55000', '2022-10-26 06:23:58', '2022-10-26 06:23:58'),
+(5, 92, 916, 31123, '55000', '2022-11-28 07:30:12', '2022-11-28 07:30:40');
 
 -- --------------------------------------------------------
 
@@ -1540,7 +1502,7 @@ INSERT INTO `san_pham` (`ms_sp`, `ten_sp`, `ten_en_sp`, `ha_sp`, `ten_ha_sp`, `m
 INSERT INTO `san_pham` (`ms_sp`, `ten_sp`, `ten_en_sp`, `ha_sp`, `ten_ha_sp`, `mota_sp`, `mota_en_sp`, `ms_cl`, `ms_gt`, `ms_kd`, `ms_th`, `ms_xx`, `created_at`, `updated_at`, `user_id`, `giaban_sp`, `giam_gia`) VALUES
 (18, 'Giày Thể Thao Nike Air Jordan 1 Retro High OG Rebellionaire', 'Nike Air Jordan 1 Retro High OG Rebellionaire Sneakers', '/storage/product/zE1U3sTA4TlD4fVhrQkc.PNG', '16.PNG', '<p>Đối với những người c&oacute; niềm đam m&ecirc; với sneaker, th&igrave; kh&ocirc;ng c&ograve;n xa lạ g&igrave; khi nhắc đến c&aacute;c đ&ocirc;i gi&agrave;y sở hữu c&ocirc;ng nghệ tuyệt vời Zoom Air của Nike. C&oacute; thể kể đến đ&ocirc;i Nike Air Jordan 1 Retro High OG Rebellionaire vừa mới được cho ra mắt gần đ&acirc;y, việc giữ lại c&aacute;c n&eacute;t cổ điển &amp; thiết kế đặc trưng ri&ecirc;ng của đ&ocirc;i gi&agrave;y v&agrave; th&ecirc;m v&agrave;o đ&oacute; những vật liệu mới sẽ khiến sẽ gi&uacute;p AJ1 đẹp hơn trong mắt những ai y&ecirc;u mến sneaker.</p>\r\n\r\n<p>Khi nh&igrave;n v&agrave;o đ&ocirc;i gi&agrave;y n&agrave;y, ch&uacute;ng ta c&oacute; thể thấy ngay phần da m&agrave;u trắng tiếp tục được&nbsp;<a href=\"https://authentic-shoes.com/collections/air-jordan-1\" rel=\"noopener noreferrer\" target=\"_blank\">Air Jordan 1</a>&nbsp;sử dụng, điểm th&ecirc;m l&agrave; phối m&agrave;u x&aacute;m đen c&ugrave;ng những họa tiết chằng chịt tạo một cảm gi&aacute;c rất ph&aacute; c&aacute;ch.&nbsp; Đ&ocirc;i gi&agrave;y cũng tự tạo điểm nhấn cho m&igrave;nh bằng một v&agrave;i details như dấu &#39;X&#39; hay những chữ c&aacute;i li&ecirc;n tiếp nhau. Điểm đ&aacute;ng ch&uacute; &yacute; l&agrave; phần l&oacute;t gi&agrave;y v&agrave; logo đ&ocirc;i c&aacute;nh đặc trưng của Michael Jordan ở cổ gi&agrave;y. Đồng thời ở phần lưỡi l&agrave; chất liệu vải lưới, sự thay đổi n&agrave;y sẽ tạo cảm gi&aacute;c th&ocirc;ng tho&aacute;ng hơn cho người sử dụng. B&ecirc;n dưới vẫn l&agrave; phần đế m&agrave;u trắng che đi bộ phận đế Nike Air c&oacute; chiều d&agrave;i đầy đủ để mang lại sự thoải m&aacute;i cho đ&ocirc;i ch&acirc;n người d&ugrave;ng.</p>', '<p style=\"text-align:start\"><span style=\"font-size:14px\"><span style=\"color:#333333\"><span style=\"font-family:Arial,&quot;Helvetica Neue&quot;,Helvetica,sans-serif\"><span style=\"background-color:#ffffff\">For those with a passion for sneakers, it is no stranger to mention Nike&#39;s excellent Zoom Air technology shoes.&nbsp;Including the recently released Nike Air Jordan 1 Retro High OG Rebellionaire, retaining the classic features &amp; distinctive design of the shoe and adding new materials will help AJ1 is more beautiful in the eyes of sneaker lovers.</span></span></span></span></p>\r\n\r\n<p style=\"text-align:start\"><span style=\"font-size:14px\"><span style=\"color:#333333\"><span style=\"font-family:Arial,&quot;Helvetica Neue&quot;,Helvetica,sans-serif\"><span style=\"background-color:#ffffff\">When looking at these shoes, we can immediately see the white leather that continues to be used by the&nbsp;<a href=\"https://authentic-shoes.com/collections/air-jordan-1\" rel=\"noopener noreferrer\" style=\"box-sizing:border-box; color:#288ad6; text-decoration:none\" target=\"_blank\">Air Jordan 1</a>&nbsp;, with the addition of a dark gray color scheme with interlaced textures to create a very disruptive feeling.&nbsp;The shoes also highlight themselves with a few details such as the &#39;X&#39; sign or consecutive letters.&nbsp;Notable points are the insoles and Michael Jordan&#39;s signature wing logo at the collar.&nbsp;At the same time, the tongue is mesh fabric, this change will create a more airy feeling for the user.&nbsp;Underneath is still a white sole that covers the full-length Nike Air sole to provide comfort to the user&#39;s feet.</span></span></span></span></p>\r\n\r\n<p>&nbsp;</p>', 8, 1, 1, 2, 2, '2022-09-14 03:06:16', '2022-09-21 02:45:23', 5, 6900000, 10),
 (19, 'Giày Thể Thao Nike Tanjun', 'Nike Tanjun', '/storage/product/qT6KDIS1t91qxUXJNr8m.PNG', '17.PNG', '<ul>\r\n	<li>kiểu d&aacute;ng năng động, trẻ trung th&iacute;ch hợp mang khi chơi thể thao, du lịch, đi học v&agrave; đi l&agrave;m.</li>\r\n	<li>Cấu tr&uacute;c r&atilde;nh Flex mềm mại giảm độ cứng v&agrave; tạo sự thoải m&aacute;i.</li>\r\n	<li>C&ocirc;ng nghệ Bootie lưới căng tho&aacute;ng kh&iacute; vừa vặn an to&agrave;n m&agrave; kh&ocirc;ng qu&aacute; &ocirc;m chật v&agrave;o ch&acirc;n.</li>\r\n	<li>C&ocirc;ng nghệ trợ lực Midsole Cushlon cung cấp đệm nhẹ, đ&aacute;p ứng c&aacute;c ti&ecirc;u chuẩn chuyển động.</li>\r\n	<li>Logo Nike được bố tr&iacute; nổi bật tr&ecirc;n sản phẩm kết hợp m&agrave;u sắc ấn tượng, phong c&aacute;ch hiện đại sẽ g&oacute;p phần khẳng định phong c&aacute;ch thời trang của bạn.</li>\r\n</ul>\r\n\r\n<p>GI&Agrave;Y THỂ THAO NIKE TANJUN 812655-011</p>\r\n\r\n<p>Được đặt t&ecirc;n theo từ tiếng Nhật c&oacute; nghĩa l&agrave; &quot;sự đơn giản&quot;, Gi&agrave;y Nike Tanjun mang đến một thiết kế hiện đại, hợp l&yacute; cho diện mạo h&agrave;ng ng&agrave;y được n&acirc;ng cao.</p>\r\n\r\n<p>&bull; kiểu d&aacute;ng năng động, trẻ trung th&iacute;ch hợp mang khi chơi thể thao, du lịch, đi học v&agrave; đi l&agrave;m. &bull; Cấu tr&uacute;c r&atilde;nh Flex mềm mại giảm độ cứng v&agrave; tạo sự thoải m&aacute;i. &bull; C&ocirc;ng nghệ Bootie lưới căng tho&aacute;ng kh&iacute; vừa vặn an to&agrave;n m&agrave; kh&ocirc;ng qu&aacute; &ocirc;m chật v&agrave;o ch&acirc;n. &bull; C&ocirc;ng nghệ trợ lực Midsole Cushlon cung cấp đệm nhẹ, đ&aacute;p ứng c&aacute;c ti&ecirc;u chuẩn chuyển động. &bull; Logo Nike được bố tr&iacute; nổi bật tr&ecirc;n sản phẩm kết hợp m&agrave;u sắc ấn tượng, phong c&aacute;ch hiện đại sẽ g&oacute;p phần khẳng định phong c&aacute;ch thời trang của bạn.</p>\r\n\r\n<p><img src=\"https://lzd-img-global.slatic.net/g/shop/4708e6dd39712dffec5407e938fe3fa9.jpeg_2200x2200q80.jpg_.webp\" /><img src=\"https://lzd-img-global.slatic.net/g/shop/302aa056f98fb4ea0725fd3eaee0fd67.jpeg_2200x2200q80.jpg_.webp\" /><img src=\"https://lzd-img-global.slatic.net/g/shop/cbfb3aebb335c80a6478745c0f85b8fb.jpeg_2200x2200q80.jpg_.webp\" /><img src=\"https://lzd-img-global.slatic.net/g/shop/4d061a2acabfe352bfedc9f78422cbbc.jpeg_2200x2200q80.jpg_.webp\" /><img src=\"https://lzd-img-global.slatic.net/g/shop/891b51511c2e1be7bda168646abe0975.jpeg_2200x2200q80.jpg_.webp\" /></p>', '<div class=\"html-content pdp-product-highlights\" style=\"border-bottom:1px solid #eff0f5; padding:11px 0px 16px; text-align:start\">\r\n<ul>\r\n	<li style=\"text-align:left\"><span style=\"font-size:12px\"><span style=\"color:#000000\"><span style=\"font-family:Roboto,-apple-system,BlinkMacSystemFont,&quot;Helvetica Neue&quot;,Helvetica,sans-serif\">Dynamic, youthful design suitable for sports, travel, school and work.</span></span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:12px\"><span style=\"color:#000000\"><span style=\"font-family:Roboto,-apple-system,BlinkMacSystemFont,&quot;Helvetica Neue&quot;,Helvetica,sans-serif\">Soft Flex groove construction reduces stiffness and creates comfort.</span></span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:12px\"><span style=\"color:#000000\"><span style=\"font-family:Roboto,-apple-system,BlinkMacSystemFont,&quot;Helvetica Neue&quot;,Helvetica,sans-serif\">Breathable mesh bootie technology fits securely without being too tight on the foot.</span></span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:12px\"><span style=\"color:#000000\"><span style=\"font-family:Roboto,-apple-system,BlinkMacSystemFont,&quot;Helvetica Neue&quot;,Helvetica,sans-serif\">Midsole Cushlon technology provides lightweight cushioning that meets motion standards.</span></span></span></li>\r\n	<li style=\"text-align:left\"><span style=\"font-size:12px\"><span style=\"color:#000000\"><span style=\"font-family:Roboto,-apple-system,BlinkMacSystemFont,&quot;Helvetica Neue&quot;,Helvetica,sans-serif\">The Nike logo is prominently arranged on the product with an impressive color combination and modern style that will contribute to your fashion sense.</span></span></span></li>\r\n</ul>\r\n</div>\r\n\r\n<div id=\"detail_decorate_root\" style=\"padding:0px; text-align:start; width:960px\">\r\n<div class=\"engine-app\" id=\"_root\" style=\"padding:0px\">\r\n<div class=\"com-struct\" id=\"Root\" style=\"padding:0px\">\r\n<div class=\"com-struct\" id=\"hc\" style=\"padding:0px\">&nbsp;</div>\r\n\r\n<div class=\"com-struct\" id=\"hd\" style=\"padding:0px\">&nbsp;</div>\r\n\r\n<div class=\"com-struct\" id=\"bd\" style=\"padding:0px\">\r\n<div class=\"com-struct\" id=\"bd_-999\" style=\"padding:0px\">\r\n<div class=\"com-struct\" id=\"bd_-999_container_0\" style=\"padding:0px\">&nbsp;</div>\r\n</div>\r\n\r\n<div class=\"com-struct\" id=\"bd_0\" style=\"padding:0px\">\r\n<div class=\"com-struct\" id=\"bd_0_container_0\" style=\"padding:0px\">&nbsp;</div>\r\n</div>\r\n\r\n<div class=\"com-struct\" id=\"bd_1\" style=\"padding:0px\">\r\n<div class=\"com-struct\" id=\"bd_1_container_0\" style=\"padding:0px\">\r\n<div style=\"padding:0px\">\r\n<div class=\"J_module\" id=\"shell-com-650769416\" style=\"padding:0px\">\r\n<div class=\"module-detailImageText\" style=\"padding:0px\">\r\n<div style=\"padding:0px; width:960px\">\r\n<div style=\"padding:0px; width:750px\">\r\n<p style=\"text-align:center\"><span style=\"font-size:12px\"><span style=\"color:#000000\"><span style=\"font-family:Roboto,-apple-system,BlinkMacSystemFont,&quot;Helvetica Neue&quot;,Helvetica,sans-serif\"><span style=\"background-color:#ffffff\"><span style=\"font-size:34px\"><span style=\"background-color:#000000\"><span style=\"font-family:Lato\"><span style=\"color:#ffffff\"><strong>NIKE TANJUN SHOES 812655-011</strong></span></span></span></span></span></span></span></span></p>\r\n\r\n<p style=\"text-align:left\"><span style=\"font-size:12px\"><span style=\"color:#000000\"><span style=\"font-family:Roboto,-apple-system,BlinkMacSystemFont,&quot;Helvetica Neue&quot;,Helvetica,sans-serif\"><span style=\"background-color:#ffffff\"><span style=\"font-size:18px\"><span style=\"background-color:rgba(0, 0, 0, 0)\"><span style=\"font-family:Lato\"><span style=\"color:#000000\">Named for the Japanese word for &quot;simplicity,&quot; the Nike Tanjun Shoe offers a modern, streamlined design for an enhanced everyday look.</span></span></span></span></span></span></span></span></p>\r\n\r\n<p style=\"text-align:left\"><span style=\"font-size:12px\"><span style=\"color:#000000\"><span style=\"font-family:Roboto,-apple-system,BlinkMacSystemFont,&quot;Helvetica Neue&quot;,Helvetica,sans-serif\"><span style=\"background-color:#ffffff\"><span style=\"font-size:18px\"><span style=\"background-color:rgba(0, 0, 0, 0)\"><span style=\"font-family:Lato\"><span style=\"color:#000000\">&bull; Dynamic and youthful design suitable for sports, travel, school and work. &bull; Soft Flex groove construction reduces stiffness and provides comfort. &bull; Breathable stretch mesh Bootie technology for a secure fit without being too tight on the foot. &bull; Cushlon midsole technology provides lightweight cushioning that meets motion standards. &bull; The Nike logo is prominently arranged on the product with an impressive color combination, modern style will contribute to affirming your fashion style.</span></span></span></span></span></span></span></span></p>\r\n<span style=\"font-size:12px\"><span style=\"color:#000000\"><span style=\"font-family:Roboto,-apple-system,BlinkMacSystemFont,&quot;Helvetica Neue&quot;,Helvetica,sans-serif\"><span style=\"background-color:#ffffff\"><img src=\"https://lzd-img-global.slatic.net/g/shop/4708e6dd39712dffec5407e938fe3fa9.jpeg_2200x2200q80.jpg_.webp\" /><img src=\"https://lzd-img-global.slatic.net/g/shop/302aa056f98fb4ea0725fd3eaee0fd67.jpeg_2200x2200q80.jpg_.webp\" /><img src=\"https://lzd-img-global.slatic.net/g/shop/cbfb3aebb335c80a6478745c0f85b8fb.jpeg_2200x2200q80.jpg_.webp\" /><img src=\"https://lzd-img-global.slatic.net/g/shop/4d061a2acabfe352bfedc9f78422cbbc.jpeg_2200x2200q80.jpg_.webp\" /><img src=\"https://lzd-img-global.slatic.net/g/shop/891b51511c2e1be7bda168646abe0975.jpeg_2200x2200q80.jpg_.webp\" /></span></span></span></span></div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n\r\n<p>&nbsp;</p>', 3, 1, 1, 2, 2, '2022-09-14 03:08:08', '2022-09-29 18:11:12', 5, 2500000, 20),
-(20, 'Giày Thể Thao Nike Air Max 97 All White', 'Nike Air Max 97 All White', '/storage/product/kISA8E1zvDxaA1OqdbbE.PNG', '18.PNG', '<p>Gi&agrave;y Nike Air Max 97 l&agrave; một trong những mẫu gi&agrave;y thuộc d&ograve;ng Air Max của thương hiệu Nike. Mẫu gi&agrave;y được thiết kế với form thể thao đặc trưng gi&uacute;p &ocirc;m s&aacute;t đ&ocirc;i ch&acirc;n. Phần upper được l&agrave;m bằng vải lưới cao cấp mang đến sự tho&aacute;ng kh&iacute; tối đa. Lớp đệm Air si&ecirc;u nhẹ gi&uacute;p đ&ocirc;i ch&acirc;n dễ chịu suốt cả ng&agrave;y. R&atilde;nh uốn cong ở đế ngo&agrave;i gi&uacute;p tăng độ đ&agrave;n hồi. Đế ngo&agrave;i bằng cao su chống trượt tạo cảm gi&aacute;c linh hoạt khi di chuyển. Với kiểu d&aacute;ng thời trang v&agrave; nổi bật, gi&agrave;y Nike Air Max 97 sẽ mang đến trải nghiệm tuyệt vời cho bạn.</p>\r\n\r\n<p><strong>TH&Ocirc;NG TIN THƯƠNG HIỆU</strong>: Thương hiệu Nike do hai người: William &ldquo;J&rdquo; Bill v&agrave; Philip H. Knight s&aacute;ng lập đến từ Mỹ. Ban đầu, h&atilde;ng c&oacute; t&ecirc;n l&agrave; Blue Ribbon Sports v&agrave; hoạt động như một nh&agrave; ph&acirc;n phối cho c&ocirc;ng ty gi&agrave;y Onitsuka Tiger của Nhật. Năm 1971. Blue Ribbon Sports ch&iacute;nh thức đổi t&ecirc;n th&agrave;nh Nike Inc. Nike Waffle Trainer l&agrave; mẫu gi&agrave;y đầu ti&ecirc;n của Nike được ra mắt năm 1974. Năm 1979, d&ograve;ng Nike Air ra đời tạo n&ecirc;n bước đột ph&aacute; cho thương hiệu Nike sau n&agrave;y. Đến nay, khi đ&atilde; trở th&agrave;nh thương hiệu tr&ecirc;n to&agrave;n thế giới, Nike vẫn tiếp tục cống hiến v&agrave; nổ lực cho đam m&ecirc; của m&igrave;nh khi đưa ra những d&ograve;ng sản phẩm về thể thao</p>\r\n\r\n<p><strong>HƯỚNG DẪN BẢO QUẢN</strong>: Kh&ocirc;ng giặt gi&agrave;y trong m&aacute;y giặt. Nếu gi&agrave;y bị bẩn, h&atilde;y để kh&ocirc; tự nhi&ecirc;n v&agrave; loại bỏ bụi bẩn bằng b&agrave;n chải mềm hoặc khăn ẩm. Nếu gi&agrave;y da bị ướt, h&atilde;y để kh&ocirc; tự nhi&ecirc;n. Gi&agrave;y da c&oacute; thể bị cong v&ecirc;nh nếu bạn sử dụng nhiệt trực tiếp l&ecirc;n gi&agrave;y để l&agrave;m kh&ocirc;. Mẹo: Nhồi giấy v&agrave;o b&ecirc;n trong gi&agrave;y c&oacute; thể l&agrave;m gi&agrave;y kh&ocirc; nhanh v&agrave; giữ được h&igrave;nh d&aacute;ng gi&agrave;y. Những loại gi&agrave;y vải c&oacute; đế bện từ c&oacute;i, đay, d&acirc;y thừng&hellip; kh&ocirc;ng được thiết kế để mang l&acirc;u d&agrave;i trong thời tiết ẩm ướt. Lớp l&oacute;t tr&ecirc;n d&eacute;p, gi&agrave;y sandal c&oacute; thể bị bong, tr&oacute;c do nhiệt độ v&agrave; mồ h&ocirc;i. Điều n&agrave;y l&agrave; kh&ocirc;ng thể tr&aacute;nh khỏi sau một thời gian sử dụng</p>', '<p style=\"text-align:left\"><span style=\"font-size:14px\"><span style=\"color:#757575\"><span style=\"font-family:Poppins,sans-serif\"><span style=\"background-color:#ffffff\">The Nike Air Max 97 shoe is one of the Nike Air Max shoe models.&nbsp;The shoe is designed with a characteristic sporty form to help hug the feet.&nbsp;The upper is made of high-quality mesh fabric for maximum breathability.&nbsp;Ultra-lightweight Air cushioning keeps feet comfortable all day long.&nbsp;Curved grooves in the outsole for increased flexibility.&nbsp;Non-slip rubber outsole provides flexibility on the move.&nbsp;With a stylish and striking design, the Nike Air Max 97 shoe will deliver a great experience for you.</span></span></span></span></p>\r\n\r\n<p style=\"text-align:left\"><span style=\"font-size:14px\"><span style=\"color:#757575\"><span style=\"font-family:Poppins,sans-serif\"><span style=\"background-color:#ffffff\"><strong>BRAND INFORMATION</strong>&nbsp;: Nike brand was founded by two people: William &ldquo;J&rdquo; Bill and Philip H. Knight from the US.&nbsp;It was originally called Blue Ribbon Sports and operated as a distributor for the Japanese shoe company Onitsuka Tiger.&nbsp;1971. Blue Ribbon Sports officially changed its name to Nike Inc.&nbsp;The Nike Waffle Trainer was the first Nike shoe to be released in 1974. In 1979, the Nike Air line was born, creating a breakthrough for the Nike brand later.&nbsp;Up to now, when it has become a worldwide brand, Nike continues to devote and strive for its passion when it comes to sports product lines.</span></span></span></span></p>\r\n\r\n<p style=\"text-align:left\"><span style=\"font-size:14px\"><span style=\"color:#757575\"><span style=\"font-family:Poppins,sans-serif\"><span style=\"background-color:#ffffff\"><strong>CARE INSTRUCTIONS</strong>&nbsp;: Do not wash shoes in washing machine.&nbsp;If the shoes get dirty, let them air dry and remove the dirt with a soft brush or damp cloth.&nbsp;If leather shoes get wet, let them dry naturally.&nbsp;Leather shoes can warp if you use direct heat on them to dry them.&nbsp;Tip: Stuffing paper inside the shoe can make the shoe dry faster and keep the shape of the shoe.&nbsp;Cloth shoes with soles made of sedge, jute, rope, etc. are not designed for long-term wear in wet weather.&nbsp;The lining on sandals and sandals can be peeled and peeled due to heat and perspiration.&nbsp;This is inevitable after a period of use</span></span></span></span></p>', 5, 3, 1, 2, 2, '2022-09-14 03:11:06', '2022-09-29 18:01:04', 5, 3900000, 10);
+(20, 'Giày Thể Thao Nike Air Max 97 All White', 'Nike Air Max 97 All White', '/storage/product/kISA8E1zvDxaA1OqdbbE.PNG', '18.PNG', '<p>Gi&agrave;y Nike Air Max 97 l&agrave; một trong những mẫu gi&agrave;y thuộc d&ograve;ng Air Max của thương hiệu Nike. Mẫu gi&agrave;y được thiết kế với form thể thao đặc trưng gi&uacute;p &ocirc;m s&aacute;t đ&ocirc;i ch&acirc;n. Phần upper được l&agrave;m bằng vải lưới cao cấp mang đến sự tho&aacute;ng kh&iacute; tối đa. Lớp đệm Air si&ecirc;u nhẹ gi&uacute;p đ&ocirc;i ch&acirc;n dễ chịu suốt cả ng&agrave;y. R&atilde;nh uốn cong ở đế ngo&agrave;i gi&uacute;p tăng độ đ&agrave;n hồi. Đế ngo&agrave;i bằng cao su chống trượt tạo cảm gi&aacute;c linh hoạt khi di chuyển. Với kiểu d&aacute;ng thời trang v&agrave; nổi bật, gi&agrave;y Nike Air Max 97 sẽ mang đến trải nghiệm tuyệt vời cho bạn.</p>\r\n\r\n<p><strong>TH&Ocirc;NG TIN THƯƠNG HIỆU</strong>: Thương hiệu Nike do hai người: William &ldquo;J&rdquo; Bill v&agrave; Philip H. Knight s&aacute;ng lập đến từ Mỹ. Ban đầu, h&atilde;ng c&oacute; t&ecirc;n l&agrave; Blue Ribbon Sports v&agrave; hoạt động như một nh&agrave; ph&acirc;n phối cho c&ocirc;ng ty gi&agrave;y Onitsuka Tiger của Nhật. Năm 1971. Blue Ribbon Sports ch&iacute;nh thức đổi t&ecirc;n th&agrave;nh Nike Inc. Nike Waffle Trainer l&agrave; mẫu gi&agrave;y đầu ti&ecirc;n của Nike được ra mắt năm 1974. Năm 1979, d&ograve;ng Nike Air ra đời tạo n&ecirc;n bước đột ph&aacute; cho thương hiệu Nike sau n&agrave;y. Đến nay, khi đ&atilde; trở th&agrave;nh thương hiệu tr&ecirc;n to&agrave;n thế giới, Nike vẫn tiếp tục cống hiến v&agrave; nổ lực cho đam m&ecirc; của m&igrave;nh khi đưa ra những d&ograve;ng sản phẩm về thể thao</p>\r\n\r\n<p><strong>HƯỚNG DẪN BẢO QUẢN</strong>: Kh&ocirc;ng giặt gi&agrave;y trong m&aacute;y giặt. Nếu gi&agrave;y bị bẩn, h&atilde;y để kh&ocirc; tự nhi&ecirc;n v&agrave; loại bỏ bụi bẩn bằng b&agrave;n chải mềm hoặc khăn ẩm. Nếu gi&agrave;y da bị ướt, h&atilde;y để kh&ocirc; tự nhi&ecirc;n. Gi&agrave;y da c&oacute; thể bị cong v&ecirc;nh nếu bạn sử dụng nhiệt trực tiếp l&ecirc;n gi&agrave;y để l&agrave;m kh&ocirc;. Mẹo: Nhồi giấy v&agrave;o b&ecirc;n trong gi&agrave;y c&oacute; thể l&agrave;m gi&agrave;y kh&ocirc; nhanh v&agrave; giữ được h&igrave;nh d&aacute;ng gi&agrave;y. Những loại gi&agrave;y vải c&oacute; đế bện từ c&oacute;i, đay, d&acirc;y thừng&hellip; kh&ocirc;ng được thiết kế để mang l&acirc;u d&agrave;i trong thời tiết ẩm ướt. Lớp l&oacute;t tr&ecirc;n d&eacute;p, gi&agrave;y sandal c&oacute; thể bị bong, tr&oacute;c do nhiệt độ v&agrave; mồ h&ocirc;i. Điều n&agrave;y l&agrave; kh&ocirc;ng thể tr&aacute;nh khỏi sau một thời gian sử dụng</p>', '<p style=\"text-align:left\"><span style=\"font-size:14px\"><span style=\"color:#757575\"><span style=\"font-family:Poppins,sans-serif\"><span style=\"background-color:#ffffff\">The Nike Air Max 97 shoe is one of the Nike Air Max shoe models.&nbsp;The shoe is designed with a characteristic sporty form to help hug the feet.&nbsp;The upper is made of high-quality mesh fabric for maximum breathability.&nbsp;Ultra-lightweight Air cushioning keeps feet comfortable all day long.&nbsp;Curved grooves in the outsole for increased flexibility.&nbsp;Non-slip rubber outsole provides flexibility on the move.&nbsp;With a stylish and striking design, the Nike Air Max 97 shoe will deliver a great experience for you.</span></span></span></span></p>\r\n\r\n<p style=\"text-align:left\"><span style=\"font-size:14px\"><span style=\"color:#757575\"><span style=\"font-family:Poppins,sans-serif\"><span style=\"background-color:#ffffff\"><strong>BRAND INFORMATION</strong>&nbsp;: Nike brand was founded by two people: William &ldquo;J&rdquo; Bill and Philip H. Knight from the US.&nbsp;It was originally called Blue Ribbon Sports and operated as a distributor for the Japanese shoe company Onitsuka Tiger.&nbsp;1971. Blue Ribbon Sports officially changed its name to Nike Inc.&nbsp;The Nike Waffle Trainer was the first Nike shoe to be released in 1974. In 1979, the Nike Air line was born, creating a breakthrough for the Nike brand later.&nbsp;Up to now, when it has become a worldwide brand, Nike continues to devote and strive for its passion when it comes to sports product lines.</span></span></span></span></p>\r\n\r\n<p style=\"text-align:left\"><span style=\"font-size:14px\"><span style=\"color:#757575\"><span style=\"font-family:Poppins,sans-serif\"><span style=\"background-color:#ffffff\"><strong>CARE INSTRUCTIONS</strong>&nbsp;: Do not wash shoes in washing machine.&nbsp;If the shoes get dirty, let them air dry and remove the dirt with a soft brush or damp cloth.&nbsp;If leather shoes get wet, let them dry naturally.&nbsp;Leather shoes can warp if you use direct heat on them to dry them.&nbsp;Tip: Stuffing paper inside the shoe can make the shoe dry faster and keep the shape of the shoe.&nbsp;Cloth shoes with soles made of sedge, jute, rope, etc. are not designed for long-term wear in wet weather.&nbsp;The lining on sandals and sandals can be peeled and peeled due to heat and perspiration.&nbsp;This is inevitable after a period of use</span></span></span></span></p>', 5, 3, 1, 2, 2, '2022-09-14 03:11:06', '2022-11-28 07:05:46', 5, 3900000, 10);
 
 -- --------------------------------------------------------
 
@@ -2130,7 +2092,7 @@ ALTER TABLE `chat_bot`
 -- AUTO_INCREMENT cho bảng `chat_lieu`
 --
 ALTER TABLE `chat_lieu`
-  MODIFY `ms_cl` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ms_cl` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `chi_tiet_don_hang`
@@ -2148,7 +2110,7 @@ ALTER TABLE `chi_tiet_san_pham`
 -- AUTO_INCREMENT cho bảng `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comment_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `comment_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT cho bảng `comment_oder`
@@ -2190,13 +2152,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT cho bảng `gioi_tinh`
 --
 ALTER TABLE `gioi_tinh`
-  MODIFY `ms_gt` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ms_gt` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `hinh_anh_san_pham`
 --
 ALTER TABLE `hinh_anh_san_pham`
-  MODIFY `ms_ha` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `ms_ha` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT cho bảng `khachhang`
@@ -2208,19 +2170,19 @@ ALTER TABLE `khachhang`
 -- AUTO_INCREMENT cho bảng `kich_co`
 --
 ALTER TABLE `kich_co`
-  MODIFY `ms_kc` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ms_kc` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `kieu_dang`
 --
 ALTER TABLE `kieu_dang`
-  MODIFY `ms_kd` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ms_kd` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT cho bảng `mau_sac`
 --
 ALTER TABLE `mau_sac`
-  MODIFY `ms_mau` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ms_mau` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `migrations`
@@ -2232,19 +2194,19 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT cho bảng `nguoi_van_chuyen`
 --
 ALTER TABLE `nguoi_van_chuyen`
-  MODIFY `ms_nvc` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `ms_nvc` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT cho bảng `nhap_hang`
 --
 ALTER TABLE `nhap_hang`
-  MODIFY `ms_nh` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=251;
+  MODIFY `ms_nh` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=254;
 
 --
 -- AUTO_INCREMENT cho bảng `nha_cung_cap`
 --
 ALTER TABLE `nha_cung_cap`
-  MODIFY `ms_ncc` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ms_ncc` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `permissions`
@@ -2256,13 +2218,13 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT cho bảng `permission_role`
 --
 ALTER TABLE `permission_role`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=171;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=234;
 
 --
 -- AUTO_INCREMENT cho bảng `phi_ships`
 --
 ALTER TABLE `phi_ships`
-  MODIFY `phi_ship_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `phi_ship_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `roles`
@@ -2280,7 +2242,7 @@ ALTER TABLE `role_user`
 -- AUTO_INCREMENT cho bảng `san_pham`
 --
 ALTER TABLE `san_pham`
-  MODIFY `ms_sp` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `ms_sp` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_social`
@@ -2304,7 +2266,7 @@ ALTER TABLE `thong_tin_giao_hang`
 -- AUTO_INCREMENT cho bảng `thuong_hieu`
 --
 ALTER TABLE `thuong_hieu`
-  MODIFY `ms_th` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ms_th` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
@@ -2316,7 +2278,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `xuat_xu`
 --
 ALTER TABLE `xuat_xu`
-  MODIFY `ms_xx` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ms_xx` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
